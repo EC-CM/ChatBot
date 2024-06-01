@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<aiml>
+	<category>
+		<pattern>Gaming</pattern>
+		<template>
+			<li>What about it?</li>
+		</template>
+	</category>
+</aiml>

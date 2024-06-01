@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Author: Carl-Michael-->
+<aiml>
+	
+	<!-- GREETING & RANDOM -->
+	
+	<category>
+		<pattern>Hi</pattern>
+		<template>
+			<random>
+				<li>Hi</li>
+				<li>Hello</li>
+				<li>Hey</li>
+				<li>Welcome</li>
+			</random>
+			
+			<srai>NAME</srai> 
+		
+		</template>
+	</category>
+	
+	<category>
+		<pattern>How are you</pattern>
+		<template>
+			<random>
+				<li>I do not have feelings, but thanks for asking.</li>
+				<li>As an AI, I cannot express myself outside of my programming.</li>
+				<li>I'm fine, thanks.</li>
+			</random>
+		</template>
+	</category>
+	
+		<category>
+		<pattern>How are you</pattern>
+		<template>
+			<random>
+				<li>I do not have feelings, but thanks for asking.</li>
+				<li>As an AI, I cannot express myself outside of my programming.</li>
+				<li>I'm fine, thanks.</li>
+			</random>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>Who are you</pattern>
+		<template>
+			<random>
+				<li>I am just a mere chatbot.</li>
+				<li>As an AI, I do not require a name, but you may refer to me as 'Bot'.</li>
+			</random>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>Bye</pattern>
+		<template>
+			<random>
+				<li>Goodbye</li>
+				<li>Bye</li>
+			</random>
+			
+			<srai>NAME</srai> 
+			
+			<random>
+				<li> See you soon!</li>
+				<li> Thanks for chatting!</li>
+			</random>
+		</template>
+	</category>
+
+
+	<!-- WILDCARDS  -->
+
+	<category>
+		<pattern>What is * plus *</pattern>
+		<template>
+			How am I to know what <star index="2"/> plus <star index="1"/> is?
+		</template>
+	</category>
+
+
+	<!-- ADVANCED SRAI -->
+
+	<category>
+		<pattern>Do you know what * stands for</pattern>
+		<template>
+			<srai>
+				What does <star/> stand for?
+			</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>What does NASA stand for</pattern>
+		<template>NASA stands for the National Aeronautics and Space Administration.</template>
+	</category>
+
+	<category>
+		<pattern>What does SCUBA stand for</pattern>
+		<template>SCUBA stands for the Self-Contained Underwater Breathing Apparatus.</template>
+	</category>
+
+
+	<!-- THINK-SET-GET -->
+
+	<category>
+		<pattern>WHAT IS MY NAME</pattern>
+		<template>
+			<condition name="username">
+				<li value="*">
+					Your name is <get name="username"/>.
+				</li>
+				<li>
+					<random>
+						<li>I don't know.</li>
+						<li>I'm not sure.</li>
+						<li>I don't believe you told me your name.</li>
+						<li>I don't remember, sorry.</li>
+						<li>I do not have your name saved.</li>
+					</random> What is your name?
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<!-- Storing the user's name -->
+
+	<category>
+		<pattern>My name is *</pattern>
+		<template>
+			<think>
+				<set name = "username">
+					<star/>
+				</set>
+			</think>
+			Nice to meet you, <star/>.
+		</template>
+	</category>
+	
+	<category>
+		<pattern>*</pattern>
+		<that>* What is your name</that>
+		<template>
+			<srai>
+				My name is <star/>
+			</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>FORGET MY NAME</pattern>
+		<template>
+		<think>
+			<set name="username"></set>
+		</think>
+		Consider it forgotten.
+		</template>
+	</category>
+	
+
+	<!-- DEFAULT VARIABLE VALUE -->
+	<category>
+		<pattern>NAME</pattern>
+		<template>
+			<condition name="username">
+				<li value="*">, <get name="username"/></li> <!-- Name provided -->
+				<li>
+					<random> <!-- No name provided -->
+						<li>!</li>
+						<li>, User</li>
+					</random>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	
+	<!-- KNOCK KNOCK JOKE -->
+
+	<category>
+		<pattern>JOKE</pattern>
+		<template>
+			<srai>KNOCK KNOCK JOKE</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>KNOCK KNOCK JOKE</pattern>
+		<template>
+			Knock Knock.
+		</template>
+	</category>
+
+	<category>
+		<pattern>Who * there</pattern>
+		<template>
+			<random>
+				<li>It's just you and I talking.</li>
+				<li>Just me.</li>
+				<li>Just the two of us.</li>
+			</random>
+			<think>
+				<set name = "BananaCount">0</set>
+			</think>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Who * there</pattern>
+		<that>KNOCK KNOCK</that>
+		<template>
+			<condition name="BananaCount">
+				<li value="2">
+					Orange
+				</li>
+
+				<li value="1">
+					Banana
+					<think>
+						<set name = "BananaCount">2</set>
+					</think>
+				</li>
+
+				<li>
+					Banana
+					<think>
+						<set name = "BananaCount">1</set>
+					</think>
+				</li>What
+
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Banana who</pattern>
+		<template>
+			<condition name="BananaCount">
+				<li value="*">Knock Knock.</li>
+				<li>Bananas are fruits not people.</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Orange who</pattern>
+		<template>
+			<condition name="BananaCount">
+				<li value="2">
+					Orange you glad I didn't say banana again?
+					<think>
+						<set name = "BananaCount"></set>
+					</think>
+				</li>
+				<li>Oranges are fruits not people.</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>FUNNY</pattern>
+		<that>Orange *</that>
+		<template>
+			<random>
+				<li></li>
+				<li>HAHA! </li>
+			</random>
+			<random>
+				<li>Glad you liked the joke.</li>
+				<li>It's the only joke I know, thanks.</li>
+			</random>
+			<random>
+				<li></li>
+				<li> :)</li>
+			</random>
+		</template>
+	</category>
+
+
+	<category>
+		<pattern>KNOCK KNOCK</pattern>
+		<template>
+			<random>
+				<li>Who's there?</li>
+				<li>Who is there?</li>
+			</random>
+		</template>
+	</category>
+	
+	
+	<category>
+		<pattern>*</pattern>
+		<that>* there</that>
+		<template>
+			<star/> who?
+		</template>
+	</category>
+	
+	<category>
+		<pattern>*</pattern>
+		<that>* who</that>
+		<template>
+			Haha
+		</template>
+	</category>
+
+
+</aiml>

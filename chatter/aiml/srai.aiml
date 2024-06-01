@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<aiml>
+	<!-- Alternative inputs -->
+
+	<!--HI-->
+
+	<category>
+		<pattern>hello</pattern>
+		<template>
+			<srai>hi</srai>
+		</template>
+	</category>
+
+	<!-- KEYWORD DETECTION -->
+	<category>
+		<pattern>hi *</pattern>
+		<template>
+			<srai>hi</srai>
+			<srai>
+				<star/>
+			</srai>
+			<!-- MULTI MESSAGES -->
+		</template>
+	</category>
+
+	<category>
+		<pattern>* hi</pattern>
+		<template>
+			<srai>hi</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* hi *</pattern>
+		<template>
+			<srai>hi</srai>
+			<srai>
+				<star/>
+			</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>hello *</pattern>
+		<template>
+			<srai>hi</srai>
+			<srai>
+				<star/>
+			</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* hello</pattern>
+		<template>
+			<srai>hi</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* hello *</pattern>
+		<template>
+			<srai>hi</srai>
+			<srai>
+				<star/>
+			</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>hey *</pattern>
+		<template>
+			<srai>hi</srai>
+			<srai>
+				<star/>
+			</srai>
+			<!-- MULTI MESSAGES -->
+		</template>
+	</category>
+
+	<category>
+		<pattern>* hey</pattern>
+		<template>
+			<srai>hi</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* hey *</pattern>
+		<template>
+			<srai>hi</srai>
+			<srai>
+				<star/>
+			</srai>
+		</template>
+	</category>
+
+
+	<!-- ACRONYMS -->
+	<category>
+		<pattern>What does * mean</pattern>
+		<template>
+			<srai>
+				What does <star/> stand for?
+			</srai>
+		</template>
+	</category>
+
+
+	<!-- GOODBYE -->
+
+	<category>
+		<pattern>Goodbye</pattern>
+		<template>
+			<srai>Bye</srai>
+		</template>
+	</category>
+
+
+	<!-- HOW ARE YOU -->
+
+	<category>
+		<pattern>* How are you</pattern>
+		<template>
+			<srai>How are you</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>How are you *</pattern>
+		<template>
+			<srai>How are you</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* How are you *</pattern>
+		<template>
+			<srai>How are you</srai>
+		</template>
+	</category>
+	
+	
+	<!-- NAME -->
+	
+	<category>
+		<pattern>* know my name</pattern>
+		<template>
+			<srai>WHAT IS MY NAME</srai>
+		</template>
+	</category>
+
+	<!-- KNOCK KNOCK -->
+
+	<category>
+		<pattern>* JOKE</pattern>
+		<template>
+			<srai>JOKE</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>JOKE *</pattern>
+		<template>
+			<srai>JOKE</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* JOKE</pattern>
+		<template>
+			<srai>JOKE</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* FUNNY</pattern>
+		<that>Orange *</that>
+		<template>
+			<srai>FUNNY></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* FUNNY *</pattern>
+		<that>Orange *</that>
+		<template>
+			<srai>FUNNY></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>LOL</pattern>
+		<that>Orange *</that>
+		<template>
+			<srai>FUNNY></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>LOL *</pattern>
+		<that>Orange *</that>
+		<template>
+			<srai>FUNNY></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>HAHA</pattern>
+		<that>Orange *</that>
+		<template>
+			<srai>FUNNY></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>HAHA *</pattern>
+		<that>Orange *</that>
+		<template>
+			<srai>FUNNY></srai>
+		</template>
+	</category>
+
+</aiml>
