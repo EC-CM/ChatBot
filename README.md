@@ -1,6 +1,6 @@
 # AIML Chatbot
 
-I created this simple chatbot as a smaller project alongside my Rubik's Cube solver, looking to explore a top-down AI. It is coded in AIML with a little C#
+I created this simple chatbot as a smaller project alongside my Rubik's Cube solver in December 2023, looking to explore a top-down AI. It is coded in AIML, with a little C#.
 
 It is a step up from basic template responses, as it can respond dynamically - remembering variables, randomising responses and allowing patterns to be matched in various forms with wildcards.
 
